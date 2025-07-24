@@ -1,0 +1,46 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "bbc-news-summary",
+  "dataset_size": 7305355,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/gopalkalpande/bbc-news-summary@e529817c203e680865a51ea9940f2ee1eb85b2af/bbc-news-summary.csv": {
+      "num_bytes": 7322514,
+      "checksum": null
+    }
+  },
+  "download_size": 7322514,
+  "features": {
+    "File_path": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Articles": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Summaries": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 14627869,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 7305355,
+      "num_examples": 2224,
+      "dataset_name": "bbc-news-summary"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
