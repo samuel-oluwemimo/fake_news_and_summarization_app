@@ -4,6 +4,8 @@ import time
 from streamlit import spinner
 
 from url_extract import extract_article_details
+from services.classfication_service import classify_service
+from services.summarization_service import summarize_service
 
 
 st.warning("U.S Politics News Article Processing App")
@@ -16,17 +18,16 @@ with st.spinner():
 
 if text:
     with st.spinner("Processing...", show_time=True):
-        # details = extract_article_details(text)
-        time.sleep(5)
-    # st.write("Title:", details['title'])
-    # st.write("Content:", details['content'])
-    with st.chat_message("user"):
-        st.write("fuck thou")
-        # st.write("Headline:", details['title'])
-        #
-        # if result == "real":
-        #     st.badge(f"{result} | {score:.2f}", color="green")
-        # else:
-        #     st.badge(f"{result} | {score:.2f}", color="red")
-        #
-        # st.write(summary)
+        details = extract_article_details(text)
+        classify_result = classify_service(details['content'])
+        sum_result = summarize_service(details['content'])
+        cat_label = classify_result['category'][0]
+        cat_score = classify_result['category'][1]
+        summary = sum_result['category']
+    with st.chat_message("ai"):
+        st.write("Headline:", details['title'])
+        if cat_label == "real":
+            st.badge(f"{cat_label} | {cat_score:.2f}", color="green")
+        else:
+            st.badge(f"{cat_label} | {cat_score:.2f}", color="red")
+        st.write(summary)
