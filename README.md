@@ -1,4 +1,5 @@
 ## U.S Politics Fake news detection and news summarization app
+![Alt]( ./preview.png)
 
 This is a web application that detects fake news and summarizes news articles.
 It takes in a news article url and scrapes it for it's content,
